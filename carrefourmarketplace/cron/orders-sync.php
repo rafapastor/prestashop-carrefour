@@ -28,10 +28,11 @@ $enqueued = 0;
 if (is_array($shopIds)) {
     foreach ($shopIds as $row) {
         $idShop = (int) $row['id_shop'];
+
         try {
             $queue = new CarrefourJobQueue($idShop);
             $queue->enqueue('order_sync', []);
-            $enqueued++;
+            ++$enqueued;
         } catch (\Exception $e) {
             fwrite(STDERR, sprintf("[carrefour-order-sync] shop %d failed: %s\n", $idShop, $e->getMessage()));
         }

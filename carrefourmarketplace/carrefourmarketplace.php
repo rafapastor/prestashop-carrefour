@@ -236,6 +236,7 @@ class Carrefourmarketplace extends PaymentModule
         if ($idShop === 0) {
             return;
         }
+
         try {
             $service = new CarrefourStockService();
             $service->onStockChange(

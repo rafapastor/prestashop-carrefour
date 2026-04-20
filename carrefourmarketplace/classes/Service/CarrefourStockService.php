@@ -44,6 +44,7 @@ class CarrefourStockService
         }
 
         $queue = new CarrefourJobQueue($idShop);
+
         try {
             $queue->enqueue(
                 'stock_update',

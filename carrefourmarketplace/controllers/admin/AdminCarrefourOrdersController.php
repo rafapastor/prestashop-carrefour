@@ -60,6 +60,7 @@ class AdminCarrefourOrdersController extends ModuleAdminController
     private function schedulePullNow()
     {
         $idShop = (int) $this->context->shop->id;
+
         try {
             $queue = new CarrefourJobQueue($idShop);
             $jobId = $queue->enqueue('order_sync', ['since' => null]);
@@ -75,6 +76,7 @@ class AdminCarrefourOrdersController extends ModuleAdminController
             return;
         }
         $idShop = (int) $this->context->shop->id;
+
         try {
             $queue = new CarrefourJobQueue($idShop);
             $queue->enqueue('order_accept', ['id_carrefour_order' => $idCarrefourOrder, 'line_acceptances' => []]);
@@ -90,6 +92,7 @@ class AdminCarrefourOrdersController extends ModuleAdminController
             return;
         }
         $idShop = (int) $this->context->shop->id;
+
         try {
             $queue = new CarrefourJobQueue($idShop);
             $queue->enqueue('order_ship', [

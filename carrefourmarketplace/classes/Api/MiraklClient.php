@@ -123,7 +123,7 @@ class MiraklClient
         $maxAttempts = isset($options['max_attempts']) ? (int) $options['max_attempts'] : self::DEFAULT_MAX_ATTEMPTS;
         $lastException = null;
 
-        for ($attempt = 1; $attempt <= $maxAttempts; $attempt++) {
+        for ($attempt = 1; $attempt <= $maxAttempts; ++$attempt) {
             try {
                 $response = call_user_func($this->transport ?: [$this, 'curlTransport'], $request);
             } catch (MiraklNetworkException $e) {

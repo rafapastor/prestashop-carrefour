@@ -64,14 +64,14 @@ class CarrefourOrderService
             foreach ($orders as $miraklOrder) {
                 try {
                     $carrefourOrderId = $this->upsertCarrefourOrder($miraklOrder);
-                    $pulled++;
+                    ++$pulled;
                     if ($carrefourOrderId > 0 && $this->shouldCreatePsOrder($miraklOrder)) {
                         if ($this->maybeCreatePsOrder($carrefourOrderId, $miraklOrder)) {
-                            $createdPsOrders++;
+                            ++$createdPsOrders;
                         }
                     }
                 } catch (\Exception $e) {
-                    $errors++;
+                    ++$errors;
                     $this->logger->error('order.import_failed', [
                         'order_id_mirakl' => $miraklOrder['order_id'] ?? null,
                         'error' => $e->getMessage(),

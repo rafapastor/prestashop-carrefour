@@ -73,6 +73,7 @@ class AdminCarrefourCategoriesController extends ModuleAdminController
 
             return;
         }
+
         try {
             $nodes = $service->refresh();
             $this->confirmations[] = sprintf('%s %d %s', $this->l('Mirakl hierarchy fetched:'), count($nodes), $this->l('nodes cached.'));
@@ -106,7 +107,7 @@ class AdminCarrefourCategoriesController extends ModuleAdminController
                 continue;
             }
             if ($mapper->setMapping((int) $idCategoryPs, $code, $label)) {
-                $saved++;
+                ++$saved;
             }
         }
         $this->confirmations[] = sprintf('%s %d %s', $this->l('Saved'), $saved, $this->l('mappings.'));

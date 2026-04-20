@@ -34,6 +34,7 @@ class CarrefourOrderSyncJob extends CarrefourAbstractJob
 
         /* Self-reschedule: enqueue next run */
         $interval = max(1, (int) $this->config->order_sync_interval_minutes);
+
         try {
             $queue = new CarrefourJobQueue($this->idShop);
             $queue->enqueue(

@@ -53,7 +53,7 @@ class CarrefourJobWorker
                 }
                 $found = true;
                 $runner->run($job);
-                $processed++;
+                ++$processed;
             }
             if (!$found) {
                 usleep($this->sleepWhenEmptyMs * 1000);

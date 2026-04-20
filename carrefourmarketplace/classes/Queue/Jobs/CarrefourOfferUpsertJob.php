@@ -133,12 +133,12 @@ class CarrefourOfferUpsertJob extends CarrefourAbstractJob
                 $offer->last_error_code = mb_substr((string) ($err['error_code'] ?? 'ERR'), 0, 50);
                 $offer->last_error_message = mb_substr((string) ($err['error_message'] ?? ''), 0, 5000);
                 $offer->last_error_at = date('Y-m-d H:i:s');
-                $errorCount++;
+                ++$errorCount;
             } else {
                 $offer->status = 'listed';
                 $offer->last_error_code = null;
                 $offer->last_error_message = null;
-                $listedCount++;
+                ++$listedCount;
             }
             $offer->last_synced_at = date('Y-m-d H:i:s');
             $offer->update();

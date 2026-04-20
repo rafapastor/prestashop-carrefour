@@ -37,12 +37,12 @@ class CarrefourWebhookHandler
         switch ($type) {
             case 'ORDER':
                 $this->handleOrderEvents($payloads);
-                break;
 
+                break;
             case 'OFFER':
                 $this->logger->info('webhook.offer_event', ['count' => count($payloads)]);
-                break;
 
+                break;
             default:
                 $this->logger->warn('webhook.unknown_event', ['type' => $type]);
         }

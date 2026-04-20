@@ -108,13 +108,13 @@ class AdminCarrefourOffersController extends ModuleAdminController
             $idProduct = (int) $pieces[0];
             $idAttribute = isset($pieces[1]) ? (int) $pieces[1] : 0;
             if ($idProduct <= 0) {
-                $skipped++;
+                ++$skipped;
 
                 continue;
             }
             $product = new Product($idProduct);
             if (!Validate::isLoadedObject($product)) {
-                $skipped++;
+                ++$skipped;
 
                 continue;
             }
@@ -147,9 +147,9 @@ class AdminCarrefourOffersController extends ModuleAdminController
             }
             $ok = $existingId > 0 ? $offer->update() : $offer->add();
             if ($ok) {
-                $added++;
+                ++$added;
             } else {
-                $skipped++;
+                ++$skipped;
             }
         }
         $this->confirmations[] = sprintf(
