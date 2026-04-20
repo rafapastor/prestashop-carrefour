@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-04-20
+
+First public release. Module installs cleanly on PrestaShop 8.x (Docker-verified), all 7 admin tabs render, CRUD on Listings works end-to-end. Mirakl integration is feature-complete in code but has NOT yet been exercised against a real Carrefour Hub account — treat 0.1.x as "works in theory, iterating as real-world feedback comes in". Breaking changes are still allowed within 0.x per semver.
+
 ### Added
 - Project scaffolding (OSS-first structure).
 - AGPL-3.0 license.
@@ -45,20 +49,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 - `scripts/` folder with developer utilities: `dev-reset.sh` (wipe + restart), `dump-state.sh` (DB summary for bug reports), `logs.sh` (tail module logs), `run-worker.sh` (one-shot worker run).
 - `upgrade/upgrade-1.1.0.php` skeleton with idempotent-migration pattern in comments for the next minor release.
 
-## [1.0.0] — Target 2026-06
-
-Initial public release. Not yet shipped; milestone targets:
-
-- Mirakl client abstraction with retry and structured error handling.
-- Catalog upload (offers).
-- Real-time stock sync via PrestaShop hooks.
-- Order import (Mirakl orders → PrestaShop orders).
-- Multi-shop support with per-shop credentials.
-- Async job queue for bulk operations.
-- Error dashboard with retry actions.
-- Sandbox / production toggle.
-- Admin UI in English and Spanish.
-- Compatible with PrestaShop 1.6 → 9.x.
-
-[Unreleased]: ../../compare/v1.0.0...HEAD
-[1.0.0]: ../../releases/tag/v1.0.0
+[Unreleased]: ../../compare/v0.1.0...HEAD
+[0.1.0]: ../../releases/tag/v0.1.0

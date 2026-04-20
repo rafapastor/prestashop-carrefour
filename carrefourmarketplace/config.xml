@@ -2,7 +2,7 @@
 <module>
     <name>carrefourmarketplace</name>
     <displayName><![CDATA[Carrefour Marketplace Connector]]></displayName>
-    <version>1.0.0</version>
+    <version>0.1.0</version>
     <author>Rafael Pastor</author>
     <tab>market_place</tab>
     <need_instance>0</need_instance>

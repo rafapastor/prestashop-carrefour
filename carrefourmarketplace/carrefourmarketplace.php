@@ -33,7 +33,7 @@ class Carrefourmarketplace extends PaymentModule
     {
         $this->name = 'carrefourmarketplace';
         $this->tab = 'market_place';
-        $this->version = '1.0.0';
+        $this->version = '0.1.0';
         $this->author = 'Rafael Pastor';
         $this->need_instance = 0;
         $this->bootstrap = true;
