@@ -14,7 +14,7 @@ Thanks for considering a contribution to this project. We keep the process light
 ## Quick start (dev environment)
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/prestashop-carrefour.git
+git clone https://github.com/rafapastor/prestashop-carrefour.git
 cd prestashop-carrefour
 make dev
 # PrestaShop at http://localhost:8081

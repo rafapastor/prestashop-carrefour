@@ -18,7 +18,7 @@ Go to [Releases](../../releases) and download `carrefourmarketplace-X.Y.Z.zip` f
 Alternatively, clone the repo and package the module yourself:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/prestashop-carrefour.git
+git clone https://github.com/rafapastor/prestashop-carrefour.git
 cd prestashop-carrefour
 make package
 # produces dist/carrefourmarketplace-X.Y.Z.zip

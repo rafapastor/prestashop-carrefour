@@ -11,6 +11,6 @@ This project follows the [Contributor Covenant v2.1](https://www.contributor-cov
 
 ## Enforcement
 
-Reports of unacceptable behaviour can be sent to *[maintainer email — add before publishing]*. Reports are confidential.
+Reports of unacceptable behaviour can be sent to **carrefour@smart-shop-ai.com**. Reports are confidential.
 
 Consequences range from a warning to a permanent ban, depending on severity. The maintainer's decision is final.

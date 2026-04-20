@@ -64,7 +64,7 @@ Detailed guides in [`docs/`](docs/).
 ### For developers (contributing or running locally)
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/prestashop-carrefour.git
+git clone https://github.com/rafapastor/prestashop-carrefour.git
 cd prestashop-carrefour
 make dev          # spins up PrestaShop + MySQL via Docker
 # PrestaShop at http://localhost:8081
@@ -90,7 +90,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide.
 - 🐛 **Bug reports**: [open an issue](../../issues/new?template=bug_report.yml)
 - 💡 **Feature requests**: [open an issue](../../issues/new?template=feature_request.yml)
 - 💬 **Questions**: [GitHub Discussions](../../discussions)
-- 📬 **Professional support, setup & custom development**: contact *[add email/link before publishing]*
+- 📬 **Professional support, setup & custom development**: [carrefour@smart-shop-ai.com](mailto:carrefour@smart-shop-ai.com) or [book a 30-min intro call](https://calendly.com/rafapas22/30min)
 
 Community support is best-effort. If you need guaranteed response times, custom integration or turnkey onboarding, paid services are available.
 

@@ -8,7 +8,9 @@ Until v1.0.0 is released, only `main` is supported. After v1.0.0, we support the
 
 **Please do not open public GitHub issues for security vulnerabilities.**
 
-Instead, email *[security contact — add before publishing]* with:
+The preferred channel is GitHub's **Private Vulnerability Reporting** — on this repo, go to *Security → Report a vulnerability*. GitHub notifies the maintainer privately and keeps the thread confidential until a fix is ready.
+
+If you can't use the GitHub flow, email **carrefour@smart-shop-ai.com** instead with:
 
 - Description of the vulnerability.
 - Steps to reproduce.
