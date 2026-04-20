@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and setup help
+    url: https://github.com/YOUR-USERNAME/prestashop-carrefour/discussions
+    about: Use GitHub Discussions for configuration help, "how do I…", or general questions.
+  - name: Professional support and custom development
+    url: https://example.com/contact
+    about: For guaranteed response times, turnkey onboarding or custom features, paid services are available.
+  - name: Security vulnerabilities
+    url: https://github.com/YOUR-USERNAME/prestashop-carrefour/blob/main/SECURITY.md
+    about: Please do not open public issues for security problems. See our security policy.

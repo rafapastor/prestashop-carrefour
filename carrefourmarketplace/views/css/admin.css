@@ -1,0 +1,27 @@
+/*
+ * SPDX-License-Identifier: AGPL-3.0-only
+ *
+ * Admin styles for the Carrefour Marketplace Connector.
+ * Kept intentionally minimal — rely on PrestaShop Bootstrap for layout.
+ */
+
+/* Status pills on the Offers / Orders / Jobs grids */
+.carrefour-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.carrefour-status-pending    { background: #f0ad4e; color: #fff; }
+.carrefour-status-syncing    { background: #5bc0de; color: #fff; }
+.carrefour-status-listed     { background: #5cb85c; color: #fff; }
+.carrefour-status-error      { background: #d9534f; color: #fff; }
+.carrefour-status-completed  { background: #5cb85c; color: #fff; }
+.carrefour-status-failed     { background: #d9534f; color: #fff; }
+.carrefour-status-running    { background: #337ab7; color: #fff; }
+
+/* Tighten up action panels above the grids */
+.panel > form.form-inline { margin-bottom: 0; }
+.panel > form.form-inline label { margin-right: 10px; }

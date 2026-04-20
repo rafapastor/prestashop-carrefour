@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build ZIP
+        run: |
+          mkdir -p dist
+          ZIP_NAME="carrefourmarketplace-${{ steps.version.outputs.version }}.zip"
+          zip -rq "dist/${ZIP_NAME}" carrefourmarketplace \
+            -x "carrefourmarketplace/logs/*" \
+            -x "carrefourmarketplace/**/.DS_Store" \
+            -x "carrefourmarketplace/**/*.log"
+          ls -lh "dist/${ZIP_NAME}"
+          echo "ZIP_PATH=dist/${ZIP_NAME}" >> "$GITHUB_ENV"
+
+      - name: Extract changelog section
+        id: changelog
+        run: |
+          awk -v version="${{ steps.version.outputs.version }}" '
+            /^## \[/ { if (found) exit; if ($0 ~ version) { found=1; next } }
+            found { print }
+          ' CHANGELOG.md > release_notes.md
+          echo "notes=$(cat release_notes.md)" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_PATH }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}

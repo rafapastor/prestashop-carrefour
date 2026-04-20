@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>carrefourmarketplace</name>
+    <displayName><![CDATA[Carrefour Marketplace Connector]]></displayName>
+    <version>1.0.0</version>
+    <author>Rafael Pastor</author>
+    <tab>market_place</tab>
+    <need_instance>0</need_instance>
+    <ps_versions_compliancy>
+        <min>1.6.0.0</min>
+        <max>9.99.99</max>
+    </ps_versions_compliancy>
+    <description><![CDATA[Open-source connector between PrestaShop and Carrefour Hub Spain (Mirakl). Upload your catalog, sync stock in real time, pull orders into PrestaShop. Multi-shop, free, AGPL-3.0 licensed.]]></description>
+</module>

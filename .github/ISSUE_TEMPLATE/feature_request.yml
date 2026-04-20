@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a new feature or enhancement
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem first, then the solution. Concrete use cases move features up the list.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: |
+        Describe the actual use case. "I'd like X" is weaker than "When I do A, B happens, which is painful because C."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How would you like it to work? UI / API / behaviour.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds, other modules, doing it manually.
+
+  - type: checkboxes
+    id: willingness
+    attributes:
+      label: Are you willing to contribute?
+      options:
+        - label: I'd be willing to open a PR for this (with guidance)
+        - label: I'd be willing to fund development of this feature

@@ -1,0 +1,49 @@
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: carrefour_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: prestashop
+      MYSQL_USER: psuser
+      MYSQL_PASSWORD: pspass
+    ports:
+      - "3306:3306"
+    platform: linux/amd64
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - carrefournet
+
+  prestashop:
+    image: prestashop/prestashop:8
+    container_name: carrefour_ps
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      DB_SERVER: mysql
+      DB_USER: psuser
+      DB_PASSWD: pspass
+      DB_NAME: prestashop
+      PS_INSTALL_AUTO: 1
+      PS_ERASE_DB: 0
+      PS_DOMAIN: localhost:8081
+      PS_FOLDER_INSTALL: install
+      PS_FOLDER_ADMIN: admindev
+      ADMIN_MAIL: admin@prestashop.com
+      ADMIN_PASSWD: prestashop_demo
+    depends_on:
+      - mysql
+    volumes:
+      - ./carrefourmarketplace:/var/www/html/modules/carrefourmarketplace
+    networks:
+      - carrefournet
+
+volumes:
+  mysql_data:
+
+networks:
+  carrefournet:
+    driver: bridge

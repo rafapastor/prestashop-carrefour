@@ -1,0 +1,80 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please fill every field — partial reports are hard to act on.
+
+        If you need configuration help rather than reporting a module bug, please use [Discussions](../../discussions) instead.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: |
+        Exact steps from a clean state.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error '...'
+    validations:
+      required: true
+
+  - type: input
+    id: ps-version
+    attributes:
+      label: PrestaShop version
+      placeholder: "e.g. 8.1.7"
+    validations:
+      required: true
+
+  - type: input
+    id: module-version
+    attributes:
+      label: Module version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "e.g. 8.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mirakl-env
+    attributes:
+      label: Mirakl environment
+      options:
+        - Sandbox
+        - Production
+        - Not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: |
+        From `var/logs/` or the module's log directory. Scrub API keys and personal data.
+      render: text
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Multi-shop? Custom theme? Other marketplace modules active?

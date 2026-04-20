@@ -1,0 +1,26 @@
+{
+    "name": "rafael-pastor/prestashop-carrefour",
+    "description": "Open-source Carrefour Hub (Mirakl) connector for PrestaShop",
+    "type": "prestashop-module",
+    "license": "AGPL-3.0-only",
+    "authors": [
+        {
+            "name": "Rafael Pastor"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}

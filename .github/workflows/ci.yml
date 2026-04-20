@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    name: Coding standards (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.1', '8.2']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: cs2pr
+
+      - name: Download PHP CS Fixer
+        run: |
+          curl -sSfL https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/latest/download/php-cs-fixer.phar -o php-cs-fixer.phar
+          chmod +x php-cs-fixer.phar
+
+      - name: Run PHP CS Fixer
+        run: php php-cs-fixer.phar fix --config=.php-cs-fixer.php --dry-run --diff --format=checkstyle | cs2pr
+
+  test:
+    name: PHPUnit (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.2']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Download phpunit.phar
+        run: |
+          curl -sSfL https://phar.phpunit.de/phpunit-9.phar -o phpunit.phar
+          chmod +x phpunit.phar
+
+      - name: Run PHPUnit
+        run: php phpunit.phar --no-coverage --colors=always
